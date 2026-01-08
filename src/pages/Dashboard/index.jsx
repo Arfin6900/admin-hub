@@ -7,14 +7,13 @@ import {
   RiLineChartLine 
 } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
 import Header from '@/components/Layout/Header';
 import StatsCard from '@/components/Common/StatsCard';
 import BookingCalendar from '@/components/Common/BookingCalendar';
 import RecentActivity from '@/components/Common/RecentActivity';
 
-const Dashboard: React.FC = () => {
-  const { user } = useSelector((state: RootState) => state.auth);
+const Dashboard = () => {
+  const { user } = useSelector((state) => state.auth);
 
   const statsData = [
     {

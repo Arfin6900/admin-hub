@@ -13,7 +13,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Chip,
   IconButton,
   useTheme,
   Grid,
@@ -31,16 +30,7 @@ import {
 import Header from '@/components/Layout/Header';
 import StatsCard from '@/components/Common/StatsCard';
 
-interface Service {
-  id: string;
-  name: string;
-  description: string;
-  duration: string;
-  price: string;
-  status: 'active' | 'inactive';
-}
-
-const mockServices: Service[] = [
+const mockServices = [
   {
     id: '1',
     name: 'Drain Cleaning',
@@ -75,7 +65,7 @@ const mockServices: Service[] = [
   },
 ];
 
-const Services: React.FC = () => {
+const Services = () => {
   const theme = useTheme();
 
   const statsData = [

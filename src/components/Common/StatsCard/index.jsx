@@ -1,22 +1,8 @@
 import React from 'react';
 import { Box, Card, CardContent, Typography, useTheme } from '@mui/material';
-import { IconType } from 'react-icons';
 import { RiArrowUpLine, RiArrowDownLine } from 'react-icons/ri';
 
-interface StatsCardProps {
-  title: string;
-  value: string | number;
-  icon: IconType;
-  iconBgColor?: string;
-  iconColor?: string;
-  trend?: {
-    value: number;
-    isPositive: boolean;
-    label?: string;
-  };
-}
-
-const StatsCard: React.FC<StatsCardProps> = ({
+const StatsCard = ({
   title,
   value,
   icon: Icon,

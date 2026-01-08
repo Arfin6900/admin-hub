@@ -17,11 +17,10 @@ import {
   RiPriceTag3Line,
 } from 'react-icons/ri';
 import Chart from 'react-apexcharts';
-import { ApexOptions } from 'apexcharts';
 import Header from '@/components/Layout/Header';
 import StatsCard from '@/components/Common/StatsCard';
 
-const Reports: React.FC = () => {
+const Reports = () => {
   const theme = useTheme();
   const [period, setPeriod] = useState('Weekly');
 
@@ -57,7 +56,7 @@ const Reports: React.FC = () => {
     },
   ];
 
-  const revenueChartOptions: ApexOptions = {
+  const revenueChartOptions = {
     chart: {
       type: 'area',
       toolbar: { show: false },
@@ -106,7 +105,7 @@ const Reports: React.FC = () => {
     },
   ];
 
-  const bookingsChartOptions: ApexOptions = {
+  const bookingsChartOptions = {
     chart: {
       type: 'bar',
       toolbar: { show: false },
@@ -142,7 +141,7 @@ const Reports: React.FC = () => {
     },
   ];
 
-  const donutChartOptions: ApexOptions = {
+  const donutChartOptions = {
     chart: {
       type: 'donut',
     },
