@@ -20,15 +20,7 @@ import {
 } from 'react-icons/ri';
 import moment from 'moment';
 
-interface BookingEvent {
-  id: string;
-  title: string;
-  date: string;
-  time: string;
-  type: 'water-heater' | 'drain' | 'emergency' | 'plumbing' | 'electrical';
-}
-
-const mockEvents: BookingEvent[] = [
+const mockEvents = [
   { id: '1', title: 'Water Heater In...', date: '2025-12-27', time: '07:00 am', type: 'water-heater' },
   { id: '2', title: 'Drain Cleaning', date: '2025-12-29', time: '13:00', type: 'drain' },
   { id: '3', title: 'Emergency Call...', date: '2025-12-01', time: '15:00', type: 'emergency' },
@@ -40,7 +32,7 @@ const mockEvents: BookingEvent[] = [
   { id: '9', title: 'Drain Cleaning', date: '2025-12-22', time: '13:00 pm', type: 'drain' },
 ];
 
-const getEventColor = (type: string) => {
+const getEventColor = (type) => {
   switch (type) {
     case 'water-heater':
       return { bg: '#FEE2E2', text: '#DC2626', border: '#FCA5A5' };
@@ -57,16 +49,16 @@ const getEventColor = (type: string) => {
   }
 };
 
-const BookingCalendar: React.FC = () => {
+const BookingCalendar = () => {
   const theme = useTheme();
   const [currentDate, setCurrentDate] = useState(moment('2025-12-01'));
-  const [viewType, setViewType] = useState<'Day' | 'Week' | 'Month'>('Month');
+  const [viewType, setViewType] = useState('Month');
 
   const daysInMonth = currentDate.daysInMonth();
   const firstDayOfMonth = currentDate.clone().startOf('month').day();
-  const weeks: (number | null)[][] = [];
+  const weeks = [];
 
-  let currentWeek: (number | null)[] = [];
+  let currentWeek = [];
   for (let i = 0; i < firstDayOfMonth; i++) {
     currentWeek.push(null);
   }
@@ -86,7 +78,7 @@ const BookingCalendar: React.FC = () => {
     weeks.push(currentWeek);
   }
 
-  const getEventsForDay = (day: number) => {
+  const getEventsForDay = (day) => {
     const dateStr = currentDate.clone().date(day).format('YYYY-MM-DD');
     return mockEvents.filter((event) => event.date === dateStr);
   };

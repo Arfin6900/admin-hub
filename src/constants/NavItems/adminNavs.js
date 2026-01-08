@@ -1,4 +1,3 @@
-import { IconType } from 'react-icons';
 import { 
   RiDashboardLine, 
   RiCalendarLine, 
@@ -12,20 +11,7 @@ import {
   RiSettings4Line
 } from 'react-icons/ri';
 
-export interface NavItem {
-  id: string;
-  title: string;
-  path: string;
-  icon: IconType;
-  badge?: number;
-}
-
-export interface NavSection {
-  title: string;
-  items: NavItem[];
-}
-
-export const adminNavSections: NavSection[] = [
+export const adminNavSections = [
   {
     title: 'Main Menu',
     items: [

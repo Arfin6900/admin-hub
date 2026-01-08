@@ -33,20 +33,7 @@ import {
 import Header from '@/components/Layout/Header';
 import StatsCard from '@/components/Common/StatsCard';
 
-interface Invoice {
-  id: string;
-  number: string;
-  customer: string;
-  type: 'invoice' | 'quote';
-  date: string;
-  dueDate: string;
-  total: string;
-  paid: string;
-  balance: string;
-  status: 'paid' | 'partial' | 'sent' | 'overdue';
-}
-
-const mockInvoices: Invoice[] = [
+const mockInvoices = [
   {
     id: '1',
     number: 'INV-2024-001',
@@ -85,7 +72,7 @@ const mockInvoices: Invoice[] = [
   },
 ];
 
-const getStatusColor = (status: string) => {
+const getStatusColor = (status) => {
   switch (status) {
     case 'paid':
       return { bg: '#D1FAE5', text: '#059669' };
@@ -100,7 +87,7 @@ const getStatusColor = (status: string) => {
   }
 };
 
-const Accounting: React.FC = () => {
+const Accounting = () => {
   const theme = useTheme();
   const [tabValue, setTabValue] = useState(0);
 

@@ -1,11 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-interface SidebarState {
-  isCollapsed: boolean;
-  activeItem: string;
-}
-
-const initialState: SidebarState = {
+const initialState = {
   isCollapsed: false,
   activeItem: 'dashboard',
 };
@@ -17,10 +12,10 @@ const sidebarSlice = createSlice({
     toggleSidebar: (state) => {
       state.isCollapsed = !state.isCollapsed;
     },
-    setSidebarCollapsed: (state, action: PayloadAction<boolean>) => {
+    setSidebarCollapsed: (state, action) => {
       state.isCollapsed = action.payload;
     },
-    setActiveItem: (state, action: PayloadAction<string>) => {
+    setActiveItem: (state, action) => {
       state.activeItem = action.payload;
     },
   },

@@ -17,26 +17,25 @@ import {
 import { RiMenuFoldLine, RiMenuUnfoldLine, RiArrowUpDownLine } from 'react-icons/ri';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
 import { toggleSidebar } from '@/redux/slices/sidebarSlice';
 import { adminNavSections } from '@/constants/NavItems/adminNavs';
 
 const DRAWER_WIDTH = 260;
 const COLLAPSED_WIDTH = 80;
 
-const Sidebar: React.FC = () => {
+const Sidebar = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
-  const { isCollapsed } = useSelector((state: RootState) => state.sidebar);
-  const { user } = useSelector((state: RootState) => state.auth);
+  const { isCollapsed } = useSelector((state) => state.sidebar);
+  const { user } = useSelector((state) => state.auth);
 
   const handleToggle = () => {
     dispatch(toggleSidebar());
   };
 
-  const isActive = (path: string) => {
+  const isActive = (path) => {
     if (path === '/') return location.pathname === '/';
     return location.pathname.startsWith(path);
   };

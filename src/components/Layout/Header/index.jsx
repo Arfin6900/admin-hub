@@ -7,18 +7,10 @@ import {
   Link,
   useTheme 
 } from '@mui/material';
-import { RiHome5Line, RiAddLine, RiFlashlightLine } from 'react-icons/ri';
+import { RiHome5Line, RiFlashlightLine } from 'react-icons/ri';
 import { useLocation, Link as RouterLink } from 'react-router-dom';
 
-interface HeaderProps {
-  title?: string;
-  subtitle?: string;
-  showQuickActions?: boolean;
-  breadcrumbs?: { label: string; path?: string; icon?: React.ReactNode }[];
-  actions?: React.ReactNode;
-}
-
-const Header: React.FC<HeaderProps> = ({ 
+const Header = ({ 
   title, 
   subtitle, 
   showQuickActions = true,

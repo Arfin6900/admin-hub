@@ -1,16 +1,11 @@
 import React from 'react';
 import { Box, useTheme } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { RootState } from '@/redux/store';
 import Sidebar from '../Sidebar';
 
-interface DashboardLayoutProps {
-  children: React.ReactNode;
-}
-
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
+const DashboardLayout = ({ children }) => {
   const theme = useTheme();
-  const { isCollapsed } = useSelector((state: RootState) => state.sidebar);
+  const { isCollapsed } = useSelector((state) => state.sidebar);
 
   return (
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>

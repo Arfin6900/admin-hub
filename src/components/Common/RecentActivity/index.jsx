@@ -16,17 +16,7 @@ import {
   RiArrowRightLine
 } from 'react-icons/ri';
 
-interface ActivityItem {
-  id: string;
-  user: string;
-  action: string;
-  amount?: string;
-  time: string;
-  type: 'booking' | 'payment' | 'review' | 'callback';
-  status?: 'completed' | 'pending';
-}
-
-const mockActivities: ActivityItem[] = [
+const mockActivities = [
   {
     id: '1',
     user: 'Sarah Johnson',
@@ -68,7 +58,7 @@ const mockActivities: ActivityItem[] = [
   },
 ];
 
-const getActivityIcon = (type: string) => {
+const getActivityIcon = (type) => {
   switch (type) {
     case 'booking':
       return { icon: RiCalendarCheckLine, bg: '#EEF2FF', color: '#5046E5' };
@@ -83,7 +73,7 @@ const getActivityIcon = (type: string) => {
   }
 };
 
-const RecentActivity: React.FC = () => {
+const RecentActivity = () => {
   const theme = useTheme();
 
   return (

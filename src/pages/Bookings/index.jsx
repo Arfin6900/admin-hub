@@ -8,7 +8,6 @@ import {
   Tabs,
   Tab,
   Chip,
-  IconButton,
   useTheme,
 } from '@mui/material';
 import {
@@ -24,21 +23,7 @@ import {
 } from 'react-icons/ri';
 import Header from '@/components/Layout/Header';
 
-interface Booking {
-  id: string;
-  customer: string;
-  service: string;
-  bookingId: string;
-  date: string;
-  time: string;
-  address: string;
-  phone: string;
-  status: 'confirmed' | 'in-progress' | 'completed' | 'pending';
-  day: number;
-  month: string;
-}
-
-const mockBookings: Booking[] = [
+const mockBookings = [
   {
     id: '1',
     customer: 'John Doe',
@@ -93,7 +78,7 @@ const mockBookings: Booking[] = [
   },
 ];
 
-const getStatusColor = (status: string) => {
+const getStatusColor = (status) => {
   switch (status) {
     case 'confirmed':
       return { bg: '#DBEAFE', text: '#2563EB' };
@@ -108,7 +93,7 @@ const getStatusColor = (status: string) => {
   }
 };
 
-const Bookings: React.FC = () => {
+const Bookings = () => {
   const theme = useTheme();
   const [tabValue, setTabValue] = useState(0);
 

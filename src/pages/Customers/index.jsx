@@ -31,19 +31,7 @@ import {
 import Header from '@/components/Layout/Header';
 import StatsCard from '@/components/Common/StatsCard';
 
-interface Customer {
-  id: string;
-  name: string;
-  customerId: string;
-  email: string;
-  phone: string;
-  totalBookings: number;
-  totalSpent: string;
-  memberSince: string;
-  avatar?: string;
-}
-
-const mockCustomers: Customer[] = [
+const mockCustomers = [
   {
     id: '1',
     name: 'John Doe',
@@ -56,7 +44,7 @@ const mockCustomers: Customer[] = [
   },
 ];
 
-const Customers: React.FC = () => {
+const Customers = () => {
   const theme = useTheme();
 
   const statsData = [
